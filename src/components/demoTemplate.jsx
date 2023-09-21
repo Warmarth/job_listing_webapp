@@ -8,13 +8,13 @@ function demo_template() {
   return (
     <div className="bg-blue-200 mt-[4.3rem] lg:flex justify-between items-center border-l-slate-400 border-l-8  shadow-xl">
       <article className="p-4 grid grid-rows-3 gap-2">
-        <ul className="flex justify-start gap-2">
-          <li className="">photosnap</li>
+        <ul className="flex justify-start gap-2 capitalize">
+          <li className="text-blue-500">photosnap</li>
           <li className="">new!</li>
           <li className="">Featured</li>
         </ul>
-        <h1>Senior frontend developer</h1>
-        <ul className="flex justify-start gap-2 text-blue-400 text-sm font-bold">
+        <h1 className="font-bold" >Senior frontend developer</h1>
+        <ul className="flex justify-start gap-2 text-gray-400 text-[0.767rem] font-semibold">
           <li>1d ago</li>.<li>full-time</li>.<li>Usa</li>
         </ul>
       </article>
