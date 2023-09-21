@@ -13,7 +13,6 @@
 .body-bg {
   background: url("./images/bg-header-mobile.svg"), var(--Desaturated-Dark-Cyan);
   background-repeat: no-repeat;
-  width: 375px;
 }
 
 @media screen and (min-width: 700px) {
@@ -21,6 +20,13 @@
     background: url("./images/bg-header-desktop.svg"),
       var(--Desaturated-Dark-Cyan);
     background-repeat: no-repeat;
-    width: 100%;
   }
+}
+.list-value{
+ padding:0.2rem 0.2rem;
+ background-color: var(--Light-Grayish-Cyan);
+ color: var(--Dark-Grayish-Cyan);
+ text-transform: uppercase;
+ font-size: 0.475rem;
+ font-weight: 700;
 }
