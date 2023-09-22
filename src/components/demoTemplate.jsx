@@ -1,27 +1,83 @@
 import React from "react";
 import info from "../assets/data.json";
-import ListValue from "./list_value";
+function DemoTemplate() {
+  const jobCard = info.map((item) => {
+    const {
+      id,
+      company,
+      logo,
+      New,
+      featured,
+      position,
+      role,
+      level,
+      postedAt,
+      contract,
+      location,
+      languages,
+      tools,
+    } = item;
 
-function demo_template() {
-  const { id, logo, company } = info;
+    const language = languages.map((lang, index) => {
+      return <button key={index}>{lang}</button>;
+    });
 
-  return (
-    <div className="bg-blue-200 mt-[4.3rem] lg:flex justify-between items-center border-l-slate-400 border-l-8  shadow-xl">
-      <article className="p-4 grid grid-rows-3 gap-2">
-        <ul className="flex justify-start gap-2 capitalize">
-          <li className="text-blue-500">photosnap</li>
-          <li className="">new!</li>
-          <li className="">Featured</li>
-        </ul>
-        <h1 className="font-bold" >Senior frontend developer</h1>
-        <ul className="flex justify-start gap-2 text-gray-400 text-[0.767rem] font-semibold">
-          <li>1d ago</li>.<li>full-time</li>.<li>Usa</li>
-        </ul>
+    const tool = tools.map((tool, index) => {
+      return <button key={index}>{tool}</button>;
+    });
+
+    return (
+      <article
+        key={id}
+        className="job-card relative flex flex-col md:flex-row md:justify-between md:items-center p-5 mt-[4.3rem] md:flex  border-l-[var(--Desaturated-Dark-Cyan)] border-l-[5px] rounded-md shadow-[var(--card-shadow)] shadow-2xl flex-wrap"
+      >
+        <div className="logo div flex items-center">
+          <div className="fig-company absolute -top-6 md:static pr-6">
+            <img
+              className=""
+              src={logo}
+              width="50"
+              height="50"
+              alt={`Logo ${company}`}
+            />
+          </div>
+          <div className="main pt-4 flex flex-col gap-1">
+            <div className="about flex justify-start gap-2 font-semibold capitalize flex-wrap">
+              <div className="company text-[var(--Desaturated-Dark-Cyan)] text-[1rem] pr-4">
+                {company}
+              </div>
+              <div className="child:uppercase child:text-white child:tracking-wider child:font-semibold child:text-xs child:px-2 child:pt-1 child:rounded-full space-x-3">
+                {New && (
+                  <button className="bg-[var(--Desaturated-Dark-Cyan)]">
+                    new!
+                  </button>
+                )}
+                {featured && <button className="bg-black">featured</button>}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2 flex-wrap">
+              <h2 className="position font-bold text-[1.2rem]">{position}</h2>
+              <div className=" flex gap-2 text-[var(--Dark-Grayish-Cyan)] text-[1rem] flex-wrap">
+                <span> {postedAt} </span> <span>•</span>
+                <span> {contract} </span> <span>•</span>
+                <span> {location} </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr className="md:hidden mt-4 mb-6 border-[var(--Dark-Grayish-Cyan)]" />
+
+        <div className="flex gap-4 flex-wrap child:text-[var(--Desaturated-Dark-Cyan)] child:font-semibold child:text-[0.95rem] child:px-2 child:py-1 child:rounded-md child:bg-[var(--Light-Grayish-Cyan2)]">
+          <button>{role}</button>
+          <button>{level}</button>
+          {language}
+          {tool}
+        </div>
       </article>
-      <hr />
-      <ListValue />
-    </div>
-  );
+    );
+  });
+  return jobCard;
 }
 
-export default demo_template;
+export default DemoTemplate;
