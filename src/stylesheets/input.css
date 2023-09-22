@@ -4,8 +4,10 @@
 
 :root {
   --Desaturated-Dark-Cyan: hsl(180, 29%, 50%);
-  --Light-Grayish-Cyan: hsl(180, 52%, 96%);
-  --Light-Grayish-Cyan: hsl(180, 31%, 95%);
+  --Light-Grayish-Cyan1: hsl(180, 52%, 96%);
+  --Light-Grayish-Cyan2: hsl(180, 31%, 95%);
   --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
   --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+
+  --card-shadow: hsla(180, 29%, 50%, 0.403);
 }
