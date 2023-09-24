@@ -1,15 +1,17 @@
 import React from "react";
-import DemoTemplate from "./components/demoTemplate";
-// import Searchcomponent from "./components/searchComponent";
+import SearchBox from "./components/SearchBox";
+import JobCards from "./components/JobCards";
 
 function App() {
   return (
-    <main className="font-['League_Spartan',sans-serif]">
-      <div className=" w-full mx-auto p-6">
-        {/* <Searchcomponent /> */}
-        <DemoTemplate />
-      </div>
-    </main>
+    <>
+      <header>
+        <SearchBox />
+      </header>
+      <main className="flex flex-col gap-10 px-6 py-14">
+        <JobCards />
+      </main>
+    </>
   );
 }
 
