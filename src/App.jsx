@@ -1,15 +1,13 @@
 import React from "react";
-import DemoTemplate from "./components/demoTemplate";
 // import Searchcomponent from "./components/searchComponent";
+import Demo_template from "./components/demoTemplate";
 
 function App() {
   return (
-    <main className="font-['League_Spartan',sans-serif]">
-      <div className=" w-full mx-auto p-6">
-        {/* <Searchcomponent /> */}
-        <DemoTemplate />
-      </div>
-    </main>
+    <div className="body-bg w-[375px] lg:w-full">
+      {/* <Searchcomponent /> */}
+      <Demo_template />
+    </div>
   );
 }
 
