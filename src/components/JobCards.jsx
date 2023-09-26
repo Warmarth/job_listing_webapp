@@ -1,6 +1,6 @@
 import info from "../assets/data.json";
 
-export default function JobCards() {
+export default function JobCards({ info }) {
   // dynamic job card adding
   const jobCard = info.map((item) => {
     const {
@@ -19,45 +19,30 @@ export default function JobCards() {
       tools,
     } = item;
 
-    const handleClick = (e) => {
-      const searchBox = document.querySelector(".search-box");
-      // working....
-    };
+    let keywords = [role, level, ...languages, ...tools];
 
-    // dynamic language adding
-    const language = languages.map((lang, index) => {
+    // dynamic keywords buttons adding
+    const keywordsBtn = keywords.map((btn, index) => {
       return (
         <button
-          onClick={handleClick}
           key={index}
           className="hover:bg-[var(--Desaturated-Dark-Cyan)] hover:text-white transition"
         >
-          {lang}
+          {btn}
         </button>
       );
     });
-
-    // dynamic tool adding
-    const tool = tools.map((tool, index) => {
-      return (
-        <button
-          onClick={handleClick}
-          key={index}
-          className="hover:bg-[var(--Desaturated-Dark-Cyan)] hover:text-white transition"
-        >
-          {tool}
-        </button>
-      );
-    });
-
-    const leftBorder =
-      New && featured && "border-l-[5px] border-[var(--Desaturated-Dark-Cyan)]";
 
     return (
       <article
         key={id}
-        className={`job-card relative ${leftBorder} flex flex-col md:gap-5 md:flex-row md:justify-between md:items-center p-5 rounded-md shadow-[var(--card-shadow)] shadow-2xl`}
+        className={`job-card relative ${
+          New &&
+          featured &&
+          "border-l-[5px] border-[var(--Desaturated-Dark-Cyan)]"
+        } flex flex-col md:gap-5 md:flex-row md:justify-between md:items-center p-5 rounded-md shadow-[var(--card-shadow)] shadow-2xl`}
       >
+        {/* Main Part About Job */}
         <div className="logo div flex items-center transition">
           <div className="fig-company absolute -top-6 md:static pr-6">
             <img
@@ -75,11 +60,13 @@ export default function JobCards() {
               </div>
               <div className="child:uppercase child:text-white child:tracking-wider child:font-semibold child:text-xs child:px-2 child:pt-1 child:rounded-full bg- space-x-3">
                 {New && (
-                  <button className="bg-[var(--Desaturated-Dark-Cyan)]">
+                  <div className="inline-block bg-[var(--Desaturated-Dark-Cyan)]">
                     new!
-                  </button>
+                  </div>
                 )}
-                {featured && <button className="bg-black">featured</button>}
+                {featured && (
+                  <div className="inline-block bg-black">featured</div>
+                )}
               </div>
             </div>
 
@@ -95,21 +82,9 @@ export default function JobCards() {
         </div>
         <hr className="md:hidden mt-4 mb-6 border-[var(--Dark-Grayish-Cyan)] transition" />
 
+        {/* Keywords Buttons */}
         <div className="flex gap-4 flex-wrap child:text-[var(--Desaturated-Dark-Cyan)] child:font-semibold child:text-[0.95rem] child:px-2 child:py-1 child:rounded-md child:bg-[var(--Light-Grayish-Cyan2)] transition">
-          <button
-            onClick={handleClick}
-            className="hover:bg-[var(--Desaturated-Dark-Cyan)] hover:text-white transition"
-          >
-            {role}
-          </button>
-          <button
-            onClick={handleClick}
-            className="hover:bg-[var(--Desaturated-Dark-Cyan)] hover:text-white transition"
-          >
-            {level}
-          </button>
-          {language}
-          {tool}
+          {keywordsBtn}
         </div>
       </article>
     );
