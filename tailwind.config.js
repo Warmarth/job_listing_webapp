@@ -8,8 +8,8 @@ export default {
   },
   plugins: [
     function ({ addVariant }) {
-      addVariant("child", "& > *");
+      addVariant('child', '& > *');
       // addVariant('child-hover', '& > *:hover');
-    },
+    }
   ],
 };
