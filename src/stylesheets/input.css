@@ -10,3 +10,7 @@
   --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
   --card-shadow: hsla(180, 29%, 50%, 0.403);
 }
+*{
+  @apply font-['League_Spartan',sans-serif] ;
+}
+
