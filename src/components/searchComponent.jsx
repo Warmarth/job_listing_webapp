@@ -1,9 +1,10 @@
 import React from "react";
 import "../App.css";
 
+
 const searchComponent = () => {
   return (
-    <div className="">
+    <div>
       <form action="" className="py-4">
         <input
           type="text"
@@ -11,7 +12,7 @@ const searchComponent = () => {
         />
       </form>
     </div>
-  );
+  )
 };
 
 export default searchComponent;

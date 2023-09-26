@@ -2,12 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      
+    },
   },
   plugins: [
     function ({ addVariant }) {
-      addVariant('child', '& > *');
+      addVariant("child", "& > *");
       // addVariant('child-hover', '& > *:hover');
-    }
+    },
   ],
 };
