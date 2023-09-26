@@ -3,6 +3,7 @@ import SearchBox from "./components/SearchBox";
 import JobCards from "./components/JobCards";
 import info from "./assets/data.json";
 
+
 function App() {
   const [filterKeywords, setfilterKeywords] = useState([]);
 
@@ -12,6 +13,7 @@ function App() {
   };
 
   return (
+
     <>
       <header>
         <div className="-z-10 relative bg-[var(--Desaturated-Dark-Cyan)] bg-[url('/src/assets/images/bg-header-mobile.svg')] sm:bg-[url('/src/assets/images/bg-header-desktop.svg')] bg-cover bg-center bg-no-repeat min-h-[155px]"></div>
@@ -22,6 +24,7 @@ function App() {
         <JobCards info={info} />
       </main>
     </>
+
   );
 }
 
