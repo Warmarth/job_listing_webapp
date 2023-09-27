@@ -1,8 +1,30 @@
-# React + Vite
+# <img src="https://cdn.iconscout.com/icon/free/png-512/free-react-1-282599.png?f=avif&w=512" width="30"/> Job Listing Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🔗 Links
 
-Currently, two official plugins are available:
+- Solution URL: [Click here]()
+- Live Site URL: [Click here]()
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🛠️ Built with
+
+- Semantic HTML5 markup
+- Tailwind CSS
+- React JS
+
+### 🎨 Features
+
+- 🫧 CSS Animations
+- 🤹 Custom UI Design
+
+### 📜 What I learnt?
+
+- Components
+- Props
+- useState Hook
+- Map & Filter
+
+
+## ✒️Author
+
+- <p style="color:skyblue">Nehal Sahu</p>
+- Frontend Mentor - [@NehalSahu8055](https://www.frontendmentor.io/profile/NehalSahu8055)
