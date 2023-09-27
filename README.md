@@ -2,8 +2,8 @@
 
 ### 🔗 Links
 
-- Solution URL: [Click here]()
-- Live Site URL: [Click here]()
+- Solution URL: [Click here](https://github.com/NehalSahu8055/FrontEnd-Mentor-React/tree/main/job_listing_webapp)
+- Live Site URL: [Click here](https://job-listing-webapp-nehal.netlify.app/)
 
 ### 🛠️ Built with
 
