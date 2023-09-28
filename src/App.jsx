@@ -1,30 +1,42 @@
-import React, { useState } from "react";
-import SearchBox from "./components/SearchBox";
-import JobCards from "./components/JobCards";
+import { useState } from "react";
 import info from "./assets/data.json";
-
+import Header from "./components/Header";
+import MainContainer from "./components/MainContainer";
 
 function App() {
-  const [filterKeywords, setfilterKeywords] = useState([]);
+  const [selectedKeyword, setKeyword] = useState();
+  const [isLoading, setLoading] = useState(false);
 
-  const addFilterKeywords = (data) => {
-    !filterKeywords.includes(data) &&
-      setfilterKeywords([...filterKeywords], data);
+  const handleKeywordSelection = (keyword) => {
+    setLoading(true);
+
+    setKeyword(keyword);
+
+    setTimeout(() => {
+      setLoading(false); // Set loading state to false when filtering is complete
+    }, 300);
   };
 
+  const filteredJobs = selectedKeyword
+    ? info.filter((job) => {
+        return (
+          job.role === selectedKeyword ||
+          job.level === selectedKeyword ||
+          job.languages.includes(selectedKeyword) ||
+          job.tools.includes(selectedKeyword)
+        );
+      })
+    : info;
+
   return (
-
     <>
-      <header>
-        <div className="-z-10 relative bg-[var(--Desaturated-Dark-Cyan)] bg-[url('/src/assets/images/bg-header-mobile.svg')] sm:bg-[url('/src/assets/images/bg-header-desktop.svg')] bg-cover bg-center bg-no-repeat min-h-[155px]"></div>
-        <SearchBox info={info} />
-      </header>
-
-      <main className="flex flex-col gap-10 px-6 py-14">
-        <JobCards info={info} />
-      </main>
+      <Header
+        info={info}
+        onKeywordSelect={handleKeywordSelection}
+        isLoading={isLoading}
+      />
+      <MainContainer info={filteredJobs} isLoading={isLoading} />
     </>
-
   );
 }
 

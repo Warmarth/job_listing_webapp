@@ -1,6 +1,4 @@
-import info from "../assets/data.json";
-
-export default function JobCards({ info }) {
+export default function JobCards({ info, isLoading }) {
   // dynamic job card adding
   const jobCard = info.map((item) => {
     const {
@@ -24,15 +22,14 @@ export default function JobCards({ info }) {
     // dynamic keywords buttons adding
     const keywordsBtn = keywords.map((btn, index) => {
       return (
-        <button
+        <div
           key={index}
-          className="hover:bg-[var(--Desaturated-Dark-Cyan)] hover:text-white transition"
+          className="rounded-md bg-[var(--Light-Grayish-Cyan1)] px-2 py-1 text-[0.95rem] font-semibold text-[var(--Desaturated-Dark-Cyan)] transition"
         >
           {btn}
-        </button>
+        </div>
       );
     });
-
     return (
       <article
         key={id}
@@ -40,39 +37,46 @@ export default function JobCards({ info }) {
           New &&
           featured &&
           "border-l-[5px] border-[var(--Desaturated-Dark-Cyan)]"
-        } flex flex-col md:gap-5 md:flex-row md:justify-between md:items-center p-5 rounded-md shadow-[var(--card-shadow)] shadow-2xl`}
+        } 
+          ${
+            isLoading ? "invisible opacity-0" : "visible opacity-100"
+          } flex  flex-col rounded-md p-5 transition-all duration-500 [box-shadow:var(--shadow)] sm:px-8 md:flex-row md:items-center md:justify-between md:gap-5 `}
       >
         {/* Main Part About Job */}
         <div className="logo div flex items-center transition">
-          <div className="fig-company absolute -top-6 md:static pr-6">
+          <div className="fig-company absolute -top-6 pr-6 md:static">
             <img
-              className=""
+              className="md:w-[5.5rem]"
               src={logo}
               width="50"
               height="50"
               alt={`Logo ${company}`}
             />
           </div>
-          <div className="main pt-4 flex flex-col gap-1">
-            <div className="about flex justify-start gap-2 font-semibold capitalize flex-wrap">
-              <div className="company text-[var(--Desaturated-Dark-Cyan)] text-[1rem] pr-4">
+          <div className="main flex flex-col gap-1 pt-4">
+            <div className="about flex flex-wrap justify-start gap-2 font-semibold capitalize">
+              <div className="company pr-4 text-[1rem] text-[var(--Desaturated-Dark-Cyan)]">
                 {company}
               </div>
-              <div className="child:uppercase child:text-white child:tracking-wider child:font-semibold child:text-xs child:px-2 child:pt-1 child:rounded-full bg- space-x-3">
+              <div className="space-x-3 child:rounded-full child:px-2 child:pt-1 child:text-xs child:font-semibold child:uppercase child:tracking-wider child:text-white">
                 {New && (
                   <div className="inline-block bg-[var(--Desaturated-Dark-Cyan)]">
                     new!
                   </div>
                 )}
                 {featured && (
-                  <div className="inline-block bg-black">featured</div>
+                  <div className="inline-block bg-[var(--Very-Dark-Grayish-Cyan)]">
+                    featured
+                  </div>
                 )}
               </div>
             </div>
 
             <div className="flex flex-col gap-2">
-              <h2 className="position font-bold text-[1.2rem]">{position}</h2>
-              <div className=" flex gap-2 text-[var(--Dark-Grayish-Cyan)] text-[1rem] flex-wrap">
+              <h2 className="position text-[1.2rem] font-bold text-[var(--Very-Dark-Grayish-Cyan)] sm:text-[1.3rem]">
+                {position}
+              </h2>
+              <div className=" flex flex-wrap gap-2 text-[1rem] text-[var(--Dark-Grayish-Cyan)]">
                 <span> {postedAt} </span> <span>•</span>
                 <span> {contract} </span> <span>•</span>
                 <span> {location} </span>
@@ -80,12 +84,10 @@ export default function JobCards({ info }) {
             </div>
           </div>
         </div>
-        <hr className="md:hidden mt-4 mb-6 border-[var(--Dark-Grayish-Cyan)] transition" />
+        <hr className="mb-6 mt-4 border-[var(--Dark-Grayish-Cyan)] transition md:hidden" />
 
         {/* Keywords Buttons */}
-        <div className="flex gap-4 flex-wrap child:text-[var(--Desaturated-Dark-Cyan)] child:font-semibold child:text-[0.95rem] child:px-2 child:py-1 child:rounded-md child:bg-[var(--Light-Grayish-Cyan2)] transition">
-          {keywordsBtn}
-        </div>
+        <div className="flex flex-wrap gap-4 ">{keywordsBtn}</div>
       </article>
     );
   });
