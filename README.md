@@ -2,8 +2,8 @@
 
 ### 🔗 Links
 
-- Solution URL: [Click here](https://github.com/NehalSahu8055/FrontEnd-Mentor-React/tree/main/job_listing_webapp)
-- Live Site URL: [Click here](https://job-listing-webapp-nehal.netlify.app/)
+- Solution URL: [Click here]()
+- Live Site URL: [Click here]()
 
 ### 🛠️ Built with
 
@@ -26,5 +26,6 @@
 
 ## ✒️Author
 
-- <p style="color:skyblue">Nehal Sahu</p>
+- <p style="color:skyblue">Warmarth</p>
+- Frontend Mentor - [@Warmarth](https://www.frontendmentor.io/profile/Warmarth)
 - Frontend Mentor - [@NehalSahu8055](https://www.frontendmentor.io/profile/NehalSahu8055)
